@@ -3,7 +3,7 @@
 Fire detection only using visiual inspection
 
 #### YOLO v4 :
-YOLO is a state-of-the-art, real-time object detection algorithm. In this notebook, we will apply the YOLO algorithm to detect objects in images. darknet prints out the objects it detected, its confidence, and how long it took to find them. We didn't compile Darknet with OpenCV so it can't display the detections directly. Instead, it saves them in predictions.png. You can open it to see the detected objects.
+YOLO is short for You Only Look Once. It's state-of-the-art, real-time object detection algorithm that can recognize multiple objects in a single frame. YOLO recognizes objects more precisely and faster than other recognition systems.
 
 
 #### Classes used for training :
