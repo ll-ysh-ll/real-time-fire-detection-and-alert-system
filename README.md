@@ -26,3 +26,19 @@ labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](ht
 ![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/3.png?raw=true)
 ![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/4.png?raw=true)
 
+### To-do
+
+- [x]  Dataset Gathering
+- [x]  Image Annotation
+- [x]  Model Training
+- [ ]  E-mail Alert
+- [ ]  Deployment Using Webapp
+
+
+## Contact me
+
+In any case if you need help feel free to contact me anytime
+
+ yashkolekar008@gmail.com
+
+ linkedin.com/in/yash-kolekar-559492116
