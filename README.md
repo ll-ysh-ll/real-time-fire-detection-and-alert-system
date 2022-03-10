@@ -1,4 +1,4 @@
-# Weapon Detection
+# Fire Detection
 
 Fire detection only using visiual inspection
 
