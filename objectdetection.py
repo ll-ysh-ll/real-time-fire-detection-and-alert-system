@@ -20,5 +20,5 @@ def yolo_objectdetection(image):
 	    cv2.putText(img, text, (box[0], box[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1,
 	                color=(0, 255, 0), thickness=2)
 	color_img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-	cv2.imwrite("prediction.jpg", color_img)
+	cv2.imwrite("mailing_images/prediction.jpg", color_img)
 	return img,txt

@@ -51,7 +51,7 @@ def txt2str(text):
 
 def main():
     """
-    SeeFood
+    Fire Detection
     """
     st.title('Fire Detection 🤖')
     #st.text('Yolov4 and OpenCV')
@@ -72,7 +72,7 @@ def main():
             # st.write(type(input_image))
             st.image(input_image)
 
-        # Food Detection
+        # Fire Detection
         if st.button("Process"):
             result_img,text = yolo_objectdetection(input_image)
             st.image(result_img)

@@ -21,7 +21,7 @@ from aiortc.contrib.media import MediaPlayer
 import glob
 import time
 import pandas as pd
-global start_time
+# global start_time
 start_time = int(time.time())
 
 from streamlit_webrtc import (
@@ -134,7 +134,7 @@ def email_alert():
     msg['from'] = 'FireDetectron'
     msg['to'] = 'saishkamat7@gmail.com'
     msg['subject'] = "Images"
-    text = "Found Fire, have a look at sample images"
+    text = "Fire Detected, have a look at image"
     msg.attach(MIMEText(text))
     F = glob.glob("mailing_images/*")
     
