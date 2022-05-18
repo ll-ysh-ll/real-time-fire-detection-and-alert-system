@@ -5,7 +5,7 @@ import threading
 import urllib.request
 from pathlib import Path
 from typing import List, NamedTuple
-
+from PIL import Image
 try:
     from typing import Literal
 except ImportError:
@@ -18,10 +18,11 @@ import numpy as np
 import pydub
 import streamlit as st
 from aiortc.contrib.media import MediaPlayer
-
+import glob
 import time
 import pandas as pd
-
+global start_time
+start_time = int(time.time())
 
 from streamlit_webrtc import (
     AudioProcessorBase,
@@ -36,7 +37,7 @@ HERE = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
 
-st.set_page_config(page_title="Shazam for Food", page_icon="🍗")
+st.set_page_config(page_title="Fire Detection", page_icon="🍗")
 
 
 WEBRTC_CLIENT_SETTINGS = ClientSettings(
@@ -111,16 +112,53 @@ net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 model = cv2.dnn_DetectionModel(net)
 model.setInputParams(size=(416, 416), scale=1/255, swapRB=True)
 
+def email_alert():
+    import smtplib
+    server = smtplib.SMTP('smtp.gmail.com',587)
+    server.ehlo()
+    
+    server.starttls()
+    username = 'saishkamat7@gmail.com'
+    receiver = username
+    # passwd = getpass.getpass()
+    passwd = 'saish@1234'
+    server.login(username,passwd)
+
+
+    from email.mime.multipart import MIMEMultipart
+    from email.mime.text import MIMEText
+    from email.mime.application import MIMEApplication
+    from datetime import datetime
+    
+    msg= MIMEMultipart()
+    msg['from'] = 'FireDetectron'
+    msg['to'] = 'saishkamat7@gmail.com'
+    msg['subject'] = "Images"
+    text = "Found Fire, have a look at sample images"
+    msg.attach(MIMEText(text))
+    F = glob.glob("mailing_images/*")
+    
+    count = 0
+    for i in F:
+        with open(i,'rb') as f:
+                part = MIMEApplication(f.read())
+                part.add_header('content-Disposition','attachment',filename='{}.jpg'.format(count+1))
+                msg.attach(part)
+    server.sendmail(username,receiver,msg.as_string())
+
 
 def app_object_detection():
-
+    # start_time = int(time.time())
+    # print("%%%%%%%%%%%%%",start_time,"%%%%%%%%%%%%%")
     class Video(VideoProcessorBase):
+        def __init__(self):
+            self.start_time = int(time.time())
 
         def recv(self, frame: av.VideoFrame) -> av.VideoFrame:
             image = frame.to_ndarray(format="bgr24")
-
             classes, scores, boxes = model.detect(
                 image, Conf_threshold, NMS_threshold)
+            label=None
             for (classid, score, box) in zip(classes, scores, boxes):
 
                 color = COLORS[int(classid) % len(COLORS)]
@@ -130,6 +168,16 @@ def app_object_detection():
                 cv2.rectangle(image, box, color, 1)
                 cv2.putText(image, label, (box[0], box[1]-10),
                             cv2.FONT_HERSHEY_COMPLEX, 0.5, color, 1)
+            if label:
+                if label[:4]=="Fire" and (self.start_time+5)<int(time.time()):
+                    # print(self.start_time+5,"<",int(time.time()))
+                    im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+                    Image.fromarray(im_rgb).save('mailing_images/prediction.jpg')
+                    self.start_time=int(time.time())+5
+                    email_alert()
+                    print("Email Send")
+
+
 
             return av.VideoFrame.from_ndarray(image, format="bgr24")
 
