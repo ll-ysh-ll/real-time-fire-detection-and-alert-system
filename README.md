@@ -20,7 +20,7 @@ labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](ht
 ## Screenshots
 
 #### Fire Detection on Images
-![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/1.png?raw=true)
+![App Screenshot](./Screenshot/1.png?raw=true)
 ![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/2.png?raw=true)
 ![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/3.png?raw=true)
 ![App Screenshot](https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/4.png?raw=true)

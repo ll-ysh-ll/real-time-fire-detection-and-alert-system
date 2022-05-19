@@ -21,6 +21,7 @@ from aiortc.contrib.media import MediaPlayer
 import glob
 import time
 import pandas as pd
+import smtplib
 # global start_time
 start_time = int(time.time())
 
@@ -83,24 +84,19 @@ COLORS = [(0, 255, 0), (0, 0, 255), (255, 0, 0),(255, 255, 0), (255, 0, 255), (0
 # empty list
 class_name = []
 
-#Coco - Server
-COCO = "./obj.names"
-
-#Coco - Local
-#COCO = "models\\coco.names"
+#Class names
+NAMES = "./YOLOv4/obj.names"
 
 
-# for reading all the datasets from the coco.names file into the array
-with open(COCO, 'rt') as f:
+
+
+# for reading all the datasets from the obj.names file into the array
+with open(NAMES, 'rt') as f:
     class_name = f.read().rstrip('\n').split('\n')
 
 # configration and weights file location - Server
-model_config_file = "./yolov4-custom.cfg"
-model_weight = "./backup/yolov4-custom_best.weights"
-
-# configration and weights file location - Local
-#model_config_file = "models\\yolov4-tiny.cfg"
-#model_weight = "models\\yolov4-tiny.weights"
+model_config_file = "./YOLOv4/yolov4-custom.cfg"
+model_weight = "./YOLOv4/backup/yolov4-custom_best.weights"
 
 
 # darknet files
@@ -113,7 +109,6 @@ model = cv2.dnn_DetectionModel(net)
 model.setInputParams(size=(416, 416), scale=1/255, swapRB=True)
 
 def email_alert():
-    import smtplib
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     
@@ -148,8 +143,6 @@ def email_alert():
 
 
 def app_object_detection():
-    # start_time = int(time.time())
-    # print("%%%%%%%%%%%%%",start_time,"%%%%%%%%%%%%%")
     class Video(VideoProcessorBase):
         def __init__(self):
             self.start_time = int(time.time())
@@ -170,11 +163,10 @@ def app_object_detection():
                             cv2.FONT_HERSHEY_COMPLEX, 0.5, color, 1)
             if label:
                 if label[:4]=="Fire" and (self.start_time+5)<int(time.time()):
-                    # print(self.start_time+5,"<",int(time.time()))
                     im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                     Image.fromarray(im_rgb).save('mailing_images/prediction.jpg')
                     self.start_time=int(time.time())+5
-                    email_alert()
+                    #email_alert()
                     print("Email Send")
 
 

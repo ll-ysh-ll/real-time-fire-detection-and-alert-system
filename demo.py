@@ -16,7 +16,7 @@ import threading
 import urllib.request
 from pathlib import Path
 from typing import List, NamedTuple
-from objectdetection import *
+from image_detection import *
 from video_detection import *
 try:
     from typing import Literal
@@ -79,8 +79,7 @@ def main():
             # txt=txt2str(text)
             if text:
                 st.error("Fire Detected")
-
-            if not text:
+            elif not text:
                 st.success('No Fire')
 
     if choice == 'Video':

@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 def yolo_objectdetection(image):
 	img = np.array(image)
-	with open('obj.names', 'r') as f:
+	with open('./YOLOv4/obj.names', 'r') as f:
 	    classes = f.read().splitlines()
-	net = cv2.dnn.readNetFromDarknet('yolov4-custom.cfg', 'backup/yolov4-custom_best.weights')
+	net = cv2.dnn.readNetFromDarknet('./YOLOv4/yolov4-custom.cfg', './YOLOv4/backup/yolov4-custom_best.weights')
 	net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
 	net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA_FP16)
 	model = cv2.dnn_DetectionModel(net)
