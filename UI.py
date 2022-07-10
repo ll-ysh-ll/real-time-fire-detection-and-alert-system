@@ -114,7 +114,7 @@ def detect_objects(our_image):
     flag = 0
     col1, col2 = st.columns(2)
     
-    yolo = YOLO("yolov4-custom.cfg", "backup/yolov4-custom_best.weights", ["Fire"]) 
+    yolo = YOLO("YOLOv4/yolov4-custom.cfg", "YOLOv4/backup/yolov4-custom_best.weights", ["Fire"]) 
     st.success("Model Loaded!!")
             
     col1.subheader("Original Image")

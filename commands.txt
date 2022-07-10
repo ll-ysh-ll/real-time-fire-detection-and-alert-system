@@ -1,0 +1,3 @@
+activate simpleUI
+cd E:\In-work\fire detection
+streamlit run demo.py

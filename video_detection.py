@@ -38,7 +38,7 @@ HERE = Path(__file__).parent
 logger = logging.getLogger(__name__)
 
 
-st.set_page_config(page_title="Fire Detection", page_icon="🍗")
+st.set_page_config(page_title="Fire Detection", page_icon="🔥")
 
 
 WEBRTC_CLIENT_SETTINGS = ClientSettings(
@@ -113,10 +113,10 @@ def email_alert():
     server.ehlo()
     
     server.starttls()
-    username = 'saishkamat7@gmail.com'
+    username = 'outofbox97@gmail.com'
     receiver = username
     # passwd = getpass.getpass()
-    passwd = 'saish@1234'
+    passwd = 'tgkdneiakaacpzci'
     server.login(username,passwd)
 
 
@@ -127,8 +127,8 @@ def email_alert():
     
     msg= MIMEMultipart()
     msg['from'] = 'FireDetectron'
-    msg['to'] = 'saishkamat7@gmail.com'
-    msg['subject'] = "Images"
+    msg['to'] = 'outofbox97@gmail.com'
+    msg['subject'] = "Fire Detected"
     text = "Fire Detected, have a look at image"
     msg.attach(MIMEText(text))
     F = glob.glob("mailing_images/*")
