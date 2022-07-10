@@ -13,7 +13,7 @@ YOLO is short for You Only Look Once. It's state-of-the-art, real-time object de
 
 labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](https://github.com/tzutalin/labelImg)
 #### Loss and mAP chart 
-<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/chart_yolov4-custom.png" width="575">
+<div style="text-align:center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/chart_yolov4-custom.png" width="575"></div>
 
 
 
@@ -21,17 +21,17 @@ labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](ht
 
 #### Fire Detection on Images
 
-<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_1.jpg" width="575">
+<div style="text-align:center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_1.jpg" width="575">
 <img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_2.jpg" width="575">
 <img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_3.jpg" width="575">
-<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_4.jpg" width="575">
+<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_4.jpg" width="575"></div>
 
 ### To-do
 
 - [x]  Dataset Gathering
 - [x]  Image Annotation
 - [x]  Model Training
-- [ ]  E-mail Alert
+- [x]  E-mail Alert
 - [ ]  Deployment Using Webapp
 
 
