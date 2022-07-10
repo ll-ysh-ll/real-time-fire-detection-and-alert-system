@@ -12,13 +12,9 @@ YOLO is short for You Only Look Once. It's state-of-the-art, real-time object de
 #### Dataset gathering and image annotation:
 
 labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](https://github.com/tzutalin/labelImg)
-<<<<<<< HEAD
-#### Loss and mAP chart 
-<p align="center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/chart_yolov4-custom.png" width="575"></p>
-=======
 ## Loss and mAP Chart 
 <p align="center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/chart_yolov4-custom.png" width="500"></p>
->>>>>>> 1657f7af27fcaf5f10d33db6b69d793936d96dba
+
 
 
 
@@ -33,11 +29,9 @@ labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](ht
 
 #### Email Alert
 <img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/email_alert.png">
-<<<<<<< HEAD
 
 
 ## To-do
->>>>>>> 1657f7af27fcaf5f10d33db6b69d793936d96dba
 
 - [x]  Dataset Gathering
 - [x]  Image Annotation
