@@ -21,10 +21,10 @@ labeling tool: [![@labelImg](https://img.shields.io/badge/LabelImg-%20-blue)](ht
 
 #### Fire Detection on Images
 
-<div style="text-align:center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_1.jpg" width="575">
+<p align="center"><img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_1.jpg" width="575">
 <img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_2.jpg" width="575">
 <img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_3.jpg" width="575">
-<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_4.jpg" width="575"></div>
+<img src="https://github.com/ll-ysh-ll/real-time-fire-detection-and-alert-system/blob/master/Screenshot/fire_screenshot_4.jpg" width="575"></p>
 
 ### To-do
 
