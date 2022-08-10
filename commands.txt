@@ -1,3 +1,10 @@
 activate simpleUI
 cd E:\In-work\fire detection
-streamlit run demo.py
+streamlit run app.py
+
+heroku git:remote -a firedetectron
+
+
+git add .
+git commit -m "first commit"
+git push heroku master
