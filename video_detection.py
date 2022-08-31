@@ -166,7 +166,7 @@ def app_object_detection():
                     im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                     Image.fromarray(im_rgb).save('mailing_images/prediction.jpg')
                     self.start_time=int(time.time())+5
-                    #email_alert()
+                    email_alert()
                     print("Email Send")
 
 
