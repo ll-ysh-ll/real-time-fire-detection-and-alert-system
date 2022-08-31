@@ -91,8 +91,9 @@ def email_alert():
     
     msg= MIMEMultipart()
     msg['from'] = 'FireDetectron'
-    msg['to'] = 'saishkamat7@gmail.com'
+    msg['to'] = 'outofbox97@gmail.com'
     msg['subject'] = "Images"
+    passwd = 'tgkdneiakaacpzci'
     text = "Found Fire, have a look at sample images"
     msg.attach(MIMEText(text))
     F = glob.glob("detected-images/*")
@@ -179,5 +180,19 @@ def object_main():
         our_image = cv2.imread("images/fire_index.jpg")
         detect_objects(our_image)
 
+    st.subheader("Author")
+    st.markdown(
+        '''
+            I am Rahul Arepaka, II year CompSci student at Ecole School of Engineering, Mahindra University
+            '''
+        '''
+            Linkedin Profile : https://www.linkedin.com/in/rahul-arepaka/
+            '''
+        '''
+            Github account : https://github.com/rahularepaka
+            '''
+    )
+
+    st.info("Feel free to edit with the source code and enjoy coding")
 if __name__ == '__main__':
     object_main()

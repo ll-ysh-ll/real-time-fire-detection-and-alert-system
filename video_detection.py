@@ -67,7 +67,24 @@ def video_detection():
     st.error('Please allow access to camera in order for this to work')
     #st.warning(
     #    'The object detection model might varies due to the server speed and internet speed')
+    st.subheader("Author")
+    st.markdown(
+        '''
+        
+        I'm yash, ML-AI Enthusiast & Freelancer.
+    
+        🎓 Graduated With Major in Computer Science & Engineering from DYPCET.
 
+        📫 How to reach me:
+
+        - [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/289725455395848194) 
+
+        - [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashkolekar008@gmail.com) 
+
+        - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-kolekar-559492116/) 
+        '''
+    )
+    st.info("Feel free to edit with the source code and enjoy coding")
     logger.debug("=== Alive threads ===")
     for thread in threading.enumerate():
         if thread.is_alive():

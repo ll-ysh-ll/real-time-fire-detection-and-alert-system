@@ -1,5 +1,7 @@
 import streamlit as st
+import webbrowser
 import cv2
+
 from PIL import Image,ImageEnhance
 import numpy as np
 import pandas as pd
@@ -26,6 +28,7 @@ import pydub
 import streamlit as st
 from aiortc.contrib.media import MediaPlayer
 import av
+
 
 
 @st.cache(persist=True)
@@ -81,7 +84,24 @@ def main():
                 st.error("Fire Detected")
             elif not text:
                 st.success('No Fire')
+        st.subheader("Author")
+        st.markdown(
+            '''
+            
+            I'm yash, ML-AI Enthusiast & Freelancer.
+        
+            🎓 Graduated With Major in Computer Science & Engineering from DYPCET.
 
+            📫 How to reach me:
+
+            - [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/289725455395848194) 
+
+            - [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashkolekar008@gmail.com) 
+
+            - [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-kolekar-559492116/) 
+            '''
+        )
+        st.info("Feel free to edit with the source code and enjoy coding")
     if choice == 'Video':
         video_detection()
 
