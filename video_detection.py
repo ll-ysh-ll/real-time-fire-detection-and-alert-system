@@ -116,8 +116,8 @@ with open(NAMES, 'rt') as f:
 
 # configration and weights file location - Server
 
-model_config_file = "./YOLOv4/yolov4-custom.cfg"
-model_weight = "./YOLOv4/backup/yolov4-custom_best.weights"
+model_config_file = './YOLOv4/yolov4-custom.cfg'
+model_weight = './YOLOv4/backup/yolov4-custom_best.weights'
 
 
 # darknet files
