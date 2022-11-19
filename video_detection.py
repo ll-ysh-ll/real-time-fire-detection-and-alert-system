@@ -33,6 +33,9 @@ from streamlit_webrtc import (
     webrtc_streamer,
 )
 
+
+
+
 HERE = Path(__file__).parent
 
 logger = logging.getLogger(__name__)
@@ -112,6 +115,7 @@ with open(NAMES, 'rt') as f:
     class_name = f.read().rstrip('\n').split('\n')
 
 # configration and weights file location - Server
+
 model_config_file = "./YOLOv4/yolov4-custom.cfg"
 model_weight = "./YOLOv4/backup/yolov4-custom_best.weights"
 
@@ -183,7 +187,7 @@ def app_object_detection():
                     im_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                     Image.fromarray(im_rgb).save('mailing_images/prediction.jpg')
                     self.start_time=int(time.time())+5
-                    email_alert()
+                    # email_alert()
                     print("Email Send")
 
 

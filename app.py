@@ -18,6 +18,8 @@ import threading
 import urllib.request
 from pathlib import Path
 from typing import List, NamedTuple
+from weight_downloader import *
+download_weight()
 from image_detection import *
 from video_detection import *
 try:
@@ -41,6 +43,7 @@ def load_image(img):
 #Conf_threshold = 0.4
 #NMS_threshold = 0.4
 
+FILE_LIST = os.listdir("./yolov4/backup")
 # Colours
 COLORS = [(0, 255, 0), (0, 0, 255), (255, 0, 0),(255, 255, 0), (255, 0, 255), (0, 255, 255),(255, 255, 255)]
 
@@ -65,6 +68,9 @@ def main():
     if choice == 'Image':
         st.subheader('Image Detection')
         with st.spinner('Wait for the Weights and Configuration files to load'):
+            # if not "yolov4-custom_best.weights" in file_list:
+            #     os.system('wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=1K0kaVCRTNRDaYdnRaX9MUGu4OZf3G1cv" -O- | sed -rn "s/.*confirm=([0-9A-Za-z_]+).*/\1\n/p")&id=1K0kaVCRTNRDaYdnRaX9MUGu4OZf3G1cv" -O yolov4-custom_best.weights && rm -rf /tmp/cookies.txt')
+            #     os.system('mv ./yolov4-custom_best.weights ./YOLOv4/backup/')
             time.sleep(1)
         st.success("Done!")
         image_file = st.file_uploader("Upload Image",type=['jpg', 'png', 'jpeg'])
